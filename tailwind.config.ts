@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundImage: {
+        'custom-image': "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGb0PWPQlSv3vQ89abcfdXk2tSjRjmXzTMJM6Q9K6wCMPCxLnsUzB6gmXwxxhWZaTrFWg&usqp=CAU')",
+      },
     },
   },
   plugins: [],
