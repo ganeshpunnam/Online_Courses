@@ -1,25 +1,20 @@
 "use client";
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import CoursePage from '../Course/page'; // Import child component
 
 const LoginPage: React.FC = () => {
   const router = useRouter();
   const [email, setEmail] = useState<string>(''); // Email state
   const [password, setPassword] = useState<string>(''); // Password state
-  const [state, setState] = useState<boolean>(false); // Boolean state for login
 
   // Handle login function
   const handleLogin = () => {
     if (email === "ganesh" && password === "ganesh") {
       router.push('/Counter'); // Navigate to Counter on success
-      setState(true); // Set state to true on successful login
     } else {
       alert("Incorrect login details");
-      setState(false); // Set state to false on login failure
     }
   };
-  console.log(state)
 
   return (
     <>

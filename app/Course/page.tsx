@@ -7,11 +7,9 @@ import learningData from '../LearningData';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-type CourseProps = {
-    loginState: boolean;
-};
 
-const CoursePage: React.FC<CourseProps> = ({ loginState }) => {
+
+const CoursePage: React.FC = () => {
     const router = useRouter();
 
     const handleOperation = () => {
