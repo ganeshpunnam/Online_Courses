@@ -24,8 +24,14 @@ const CoursePage: React.FC = () => {
             <nav aria-label="Breadcrumb">
                 <ol className="flex space-x-2 px-4">
                     <li>
-                        <Link href="/Course" className="text-blue-500 hover:text-blue-700">
+                        <Link href="/Header" className="text-blue-500 hover:text-blue-700">
                             Home
+                        </Link>
+                    </li>
+                    <li className="mx-2">/</li>
+                    <li>
+                        <Link href="/Course" className="text-blue-500 hover:text-blue-700">
+                            Course
                         </Link>
                     </li>
                     <li className="mx-2">/</li>

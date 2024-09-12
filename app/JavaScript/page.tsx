@@ -73,6 +73,12 @@ const Page: React.FC = () => {
           </li>
           <li className="mx-2">/</li>
           <li>
+            <Link href="/Course" className="text-blue-500 hover:text-blue-700">
+              Course
+            </Link>
+          </li>
+          <li className="mx-2">/</li>
+          <li>
             <Link href="/JavaScript" className="text-blue-500 hover:text-blue-700">
               Products
             </Link>
