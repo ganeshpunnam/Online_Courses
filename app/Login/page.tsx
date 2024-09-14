@@ -24,7 +24,8 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
   };
 
   // Handle form submission
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent default form submission
     if (isLogin) {
       // Example login logic
       if (formData.email === "ganesh@example.com" && formData.password === "ganesh123") {
@@ -36,7 +37,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
     } else {
       // Example signup logic
       if (formData.name && formData.email && formData.password) {
-        alert("Sign Up Successs"); // Replace with actual signup logic
+        alert("Sign Up Success"); // Replace with actual signup logic
         onClose(); // Close the modal
       } else {
         alert("Please fill in all fields");
@@ -66,53 +67,49 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
             Sign Up
           </button>
         </div>
-        {!isLogin && (
+        <form onSubmit={handleSubmit}>
+          {!isLogin && (
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your full name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="p-3 border border-gray-300 rounded w-full focus:ring-2 focus:ring-blue-500 outline-none transition duration-150 ease-in-out"
+              />
+            </div>
+          )}
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Name
-            </label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
             <input
-              type="text"
-              name="name"
-              placeholder="Enter your full name"
-              value={formData.name}
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={formData.email}
               onChange={handleInputChange}
               className="p-3 border border-gray-300 rounded w-full focus:ring-2 focus:ring-blue-500 outline-none transition duration-150 ease-in-out"
             />
           </div>
-        )}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            value={formData.email}
-            onChange={handleInputChange}
-            className="p-3 border border-gray-300 rounded w-full focus:ring-2 focus:ring-blue-500 outline-none transition duration-150 ease-in-out"
-          />
-        </div>
-        <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Password
-          </label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Enter your password"
-            value={formData.password}
-            onChange={handleInputChange}
-            className="p-3 border border-gray-300 rounded w-full focus:ring-2 focus:ring-blue-500 outline-none transition duration-150 ease-in-out"
-          />
-        </div>
-        <button
-          className="w-full bg-blue-600 text-white py-3 rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors"
-          onClick={handleSubmit}
-        >
-          {isLogin ? "Sign In" : "Sign Up"}
-        </button>
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              value={formData.password}
+              onChange={handleInputChange}
+              className="p-3 border border-gray-300 rounded w-full focus:ring-2 focus:ring-blue-500 outline-none transition duration-150 ease-in-out"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-3 rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors"
+          >
+            {isLogin ? "Sign In" : "Sign Up"}
+          </button>
+        </form>
         <button
           className="mt-4 w-full text-red-500 text-sm underline"
           onClick={onClose}
