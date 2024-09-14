@@ -10,7 +10,7 @@ const LoginPage: React.FC = () => {
   // Handle login function
   const handleLogin = () => {
     if (email === "ganesh" && password === "ganesh") {
-      router.push('/Counter'); // Navigate to Counter on success
+      router.push('/Course'); // Navigate to Counter on success
     } else {
       alert("Incorrect login details");
     }
