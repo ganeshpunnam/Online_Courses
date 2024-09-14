@@ -4,7 +4,7 @@
 import { useState, useCallback } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
-import LoginModal from "../Login/page"; // Correct the path for LoginModal
+import LoginModal from "../LoginModal"; // Corrected path for LoginModal
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false); // For mobile menu
