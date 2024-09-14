@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useCallback, useRef } from 'react';
-import Header from '../Header/page';
 import Image from 'next/image';
 import html2canvas from 'html2canvas';
 
@@ -31,7 +30,6 @@ const Page: React.FC = React.memo(() => {
 
   return (
     <div className="flex flex-col items-center p-4 sm:p-8">
-      {/* <Header /> */}
       <h1 className="text-3xl sm:text-5xl text-red-700 font-bold mt-6 mb-6 text-center">GENERATE CERTIFICATE</h1>
       
       <form onSubmit={handleTask} className="mb-6 flex flex-col sm:flex-row items-center">
@@ -41,10 +39,12 @@ const Page: React.FC = React.memo(() => {
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Enter name"
           className="border-2 border-gray-300 p-2 rounded-lg shadow-sm focus:outline-none focus:border-blue-500 w-full sm:w-auto"
+          aria-label="Enter your name"
         />
         <button
           type="submit"
           className="mt-4 sm:mt-0 sm:ml-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          aria-label="Submit your name"
         >
           Submit
         </button>
