@@ -87,4 +87,6 @@ const Page: React.FC = React.memo(() => {
   );
 });
 
+Page.displayName = "CertificatePage"; // Add this line to give the component a display name
+
 export default Page;
