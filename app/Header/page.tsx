@@ -1,8 +1,10 @@
-"use client";
+// app/Header.tsx
+"use client"; // Ensures this is a Client Component
+
 import { useState, useCallback } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
-import LoginModal from "../Login/page"; // Import the LoginModal component
+import LoginModal from "../Login/page"; // Correct the path for LoginModal
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false); // For mobile menu
@@ -66,7 +68,7 @@ const Header: React.FC = () => {
       )}
 
       {/* Login Modal */}
-      <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} />
+      {isLoginModalOpen && <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} />}
     </div>
   );
 };

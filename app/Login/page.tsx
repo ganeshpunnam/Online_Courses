@@ -1,3 +1,4 @@
+// app/LoginModal.tsx
 "use client"; // Ensures this is a Client Component
 
 import React, { useState } from "react";
