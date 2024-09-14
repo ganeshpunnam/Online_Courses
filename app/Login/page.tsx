@@ -36,7 +36,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
     } else {
       // Example signup logic
       if (formData.name && formData.email && formData.password) {
-        alert("Sign Up Success"); // Replace with actual signup logic
+        alert("Sign Up Successs"); // Replace with actual signup logic
         onClose(); // Close the modal
       } else {
         alert("Please fill in all fields");
