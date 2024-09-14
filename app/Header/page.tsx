@@ -1,4 +1,3 @@
-// app/Header.tsx
 "use client"; // Ensures this is a Client Component
 
 import { useState, useCallback } from "react";
