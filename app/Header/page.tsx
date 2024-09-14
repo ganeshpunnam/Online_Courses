@@ -1,26 +1,30 @@
-"use client"; // Add this at the top to make this a Client Component
-
-import { useState, useCallback, memo } from "react";
+"use client";
+import { useState, useCallback } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
+import LoginModal from "../Login/page"; // Import the LoginModal component
 
-const Header: React.FC = memo(() => {
-  const route = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
+const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false); // For mobile menu
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false); // For login modal
 
-  // Memoize the toggle function to avoid unnecessary re-renders
   const toggleMenu = useCallback(() => {
-    setIsOpen(prev => !prev);
+    setIsOpen((prev) => !prev);
   }, []);
+
+  const openLoginModal = () => {
+    setIsLoginModalOpen(true);
+  };
+
+  const closeLoginModal = () => {
+    setIsLoginModalOpen(false);
+  };
 
   return (
     <div className="w-full bg-yellow-400 p-5">
       {/* Header container */}
       <div className="flex justify-between items-center">
-        <h2 className="font-bold text-2xl hover:text-red-700">
-          Ganesh
-        </h2>
+        <h2 className="font-bold text-2xl hover:text-red-700">Ganesh</h2>
 
         {/* Hamburger Menu Icon for Mobile */}
         <div className="md:hidden">
@@ -37,12 +41,8 @@ const Header: React.FC = memo(() => {
           <Link href="/Certificate" className="hover:text-blue-700">
             Certificate
           </Link>
-          <button
-            onClick={() => route.push("/Login")}
-            className="hover:text-blue-700"
-            aria-label="Login"
-          >
-            Login
+          <button onClick={openLoginModal} className="hover:text-blue-700" aria-label="Login">
+            Login / Signup
           </button>
         </div>
       </div>
@@ -59,17 +59,16 @@ const Header: React.FC = memo(() => {
           <Link href="/Certificate" className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="Certificate">
             Certificate
           </Link>
-          <button
-            onClick={() => route.push("/Login")}
-            className="py-2 hover:text-blue-700 w-full text-left pl-4"
-            aria-label="Login"
-          >
-            Login
+          <button onClick={openLoginModal} className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="Login">
+            Login / Signup
           </button>
         </div>
       )}
+
+      {/* Login Modal */}
+      <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} />
     </div>
   );
-});
+};
 
 export default Header;
