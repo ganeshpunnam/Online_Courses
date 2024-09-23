@@ -42,6 +42,12 @@ const JavaScriptCompiler: React.FC = () => {
           theme="vs-dark"
         />
       </div>
+      <button
+        onClick={runCode}
+        className="mt-4 px-5 bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-200"
+      >
+        Run Code
+      </button>
 
       {/* Output Box */}
       <div className="mb-4">
@@ -51,12 +57,7 @@ const JavaScriptCompiler: React.FC = () => {
         </div>
       </div>
 
-      <button
-        onClick={runCode}
-        className="mt-4 px-5 bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-200"
-      >
-        Run Code
-      </button>
+     
     </div>
   );
 };
