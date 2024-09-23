@@ -1,12 +1,11 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import JavaScript from '../JavaScript/page';
 import Link from 'next/link';
+import Header from '../Header/page';
 
-const StudentDashboard = () => {
+const StudentDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState('courses');
-
-
 
   const dummyRoadmap = [
     { id: 1, stage: 'Learn HTML & CSS', status: 'Completed' },
@@ -23,13 +22,13 @@ const StudentDashboard = () => {
       case 'courses':
         return (
           <div>
-            <div className='flex justify-between item-center'>
-            <h2 className="text-xl ">Courses</h2>
-            <Link className='text-red' href={"/JavaScriptCompiler"}>
-            Play Groynd
-            </Link>
+            <div className='flex justify-between items-center'>
+              <h2 className="text-xl">Courses</h2>
+              <Link className='text-red-500' href={"/JavaScriptCompiler"}>
+                Play Ground
+              </Link>
             </div>
-          <JavaScript/>
+            <JavaScript />
           </div>
         );
       case 'roadmap':
@@ -64,18 +63,41 @@ const StudentDashboard = () => {
   };
 
   return (
-    <div className="flex">
-      <aside className="w-1/4 bg-gray-800 text-white p-5">
-        <h2 className="text-2xl font-bold mb-5">Student Dashboard</h2>
-        <ul>
-          <li className={`cursor-pointer py-2 ${activeTab === 'courses' ? 'font-bold' : ''}`} onClick={() => setActiveTab('courses')}>Courses</li>
-          <li className={`cursor-pointer py-2 ${activeTab === 'roadmap' ? 'font-bold' : ''}`} onClick={() => setActiveTab('roadmap')}>Roadmap</li>
-          <li className={`cursor-pointer py-2 ${activeTab === 'quiz' ? 'font-bold' : ''}`} onClick={() => setActiveTab('quiz')}>Quiz</li>
-        </ul>
-      </aside>
-      <main className="flex-1 p-5 bg-gray-100">
-        {renderContent()}
-      </main>
+    <div className="flex flex-col min-h-screen">
+      {/* Header at the top */}
+      <Header />
+
+      <div className="flex flex-1">
+        {/* Sidebar */}
+        <aside className="w-1/4 bg-gray-800 text-white p-5">
+          <h2 className="text-2xl font-bold mb-5">Student Dashboard</h2>
+          <ul>
+            <li
+              className={`cursor-pointer py-2 ${activeTab === 'courses' ? 'font-bold' : ''}`}
+              onClick={() => setActiveTab('courses')}
+            >
+              Courses
+            </li>
+            <li
+              className={`cursor-pointer py-2 ${activeTab === 'roadmap' ? 'font-bold' : ''}`}
+              onClick={() => setActiveTab('roadmap')}
+            >
+              Roadmap
+            </li>
+            <li
+              className={`cursor-pointer py-2 ${activeTab === 'quiz' ? 'font-bold' : ''}`}
+              onClick={() => setActiveTab('quiz')}
+            >
+              Quiz
+            </li>
+          </ul>
+        </aside>
+
+        {/* Main Content */}
+        <main className="flex-1 p-5 bg-gray-100">
+          {renderContent()}
+        </main>
+      </div>
     </div>
   );
 };

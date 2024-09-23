@@ -2,7 +2,7 @@ import Header from './Header/page';
 // import HtmlCompiler from './HtmlCompiler/page';
 
 // import JavaScriptCompiler from './JavaScriptCompiler/page';
-import StudentDashboard from './StudentDashboard/page';
+// import StudentDashboard from './StudentDashboard/page';
 
 const Page = () => {
   return (
@@ -10,7 +10,7 @@ const Page = () => {
       <Header />
    {/* <HtmlCompiler/>
    <JavaScriptCompiler/> */}
-   <StudentDashboard/>
+   {/* <StudentDashboard/> */}
 
     </div>
   );

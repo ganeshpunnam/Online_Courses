@@ -13,7 +13,7 @@ const CoursePage: React.FC = () => {
 
   // Lazy-load the operation
   const handleOperation = React.useCallback(() => {
-    router.push("/JavaScript");
+    router.push("/StudentDashboard");
   }, [router]);
   
 
