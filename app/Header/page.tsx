@@ -11,10 +11,6 @@ const Header: React.FC = () => {
     setIsOpen((prev) => !prev);
   }, []);
 
-
-
-
-
   return (
     <div className="w-full bg-yellow-400 p-5">
       {/* Header container */}
@@ -36,7 +32,6 @@ const Header: React.FC = () => {
           <Link href="/Certificate" className="hover:text-blue-700">
             Certificate
           </Link>
-         
         </div>
       </div>
 
@@ -46,20 +41,11 @@ const Header: React.FC = () => {
           <Link href="/Counter" className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="Counter">
             Counter
           </Link>
-          <Link href="/Course" className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="Course">
-            Course
-          </Link>
-          <Link href="/Certificate" className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="Certificate">
-            Certificate
-          </Link>
           <Link href="/HtmlCompiler" className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="HtmlCompiler">
             HtmlCompiler
           </Link>
-         
         </div>
       )}
-
-     
     </div>
   );
 };
