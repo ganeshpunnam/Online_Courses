@@ -1,9 +1,4 @@
 "use client";
-<<<<<<< HEAD
-=======
-import Link from 'next/link';
-import Header from '../Header/page';
->>>>>>> bcb821f903d8968b84199edd9329de6683429281
 import { useState } from 'react';
 
 interface AccordionItem {
@@ -66,13 +61,8 @@ const Page: React.FC = () => {
 
   return (
     <div className='bg-black text-white flex flex-col gap-4'>
-<<<<<<< HEAD
      
       {/* <nav aria-label="Breadcrumb">
-=======
-      <Header />
-      <nav aria-label="Breadcrumb">
->>>>>>> bcb821f903d8968b84199edd9329de6683429281
         <ol className="flex space-x-2">
           <li>
             <Link href="/Course" className="text-blue-500 hover:text-blue-700 ml-5">
@@ -93,11 +83,7 @@ const Page: React.FC = () => {
           </li>
           <li className="mx-2">/</li>
         </ol>
-<<<<<<< HEAD
       </nav> */}
-=======
-      </nav>
->>>>>>> bcb821f903d8968b84199edd9329de6683429281
       <div className='p-6 flex flex-col gap-6'>
         <h1 className='text-3xl font-bold'>JavaScript Technologies</h1>
 
