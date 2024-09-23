@@ -3,7 +3,6 @@
 import { useState, useCallback } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
-import LoginModal from "../Login/page"; // Corrected path for LoginModal
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false); // For mobile menu
@@ -63,14 +62,11 @@ const Header: React.FC = () => {
           <Link href="/HtmlCompiler" className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="HtmlCompiler">
             HtmlCompiler
           </Link>
-          <button onClick={openLoginModal} className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="Login">
-            Login / Signup
-          </button>
+         
         </div>
       )}
 
-      {/* Login Modal */}
-      {isLoginModalOpen && <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} />}
+     
     </div>
   );
 };
