@@ -6,19 +6,14 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false); // For mobile menu
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false); // For login modal
 
   const toggleMenu = useCallback(() => {
     setIsOpen((prev) => !prev);
   }, []);
 
-  const openLoginModal = () => {
-    setIsLoginModalOpen(true);
-  };
 
-  const closeLoginModal = () => {
-    setIsLoginModalOpen(false);
-  };
+
+
 
   return (
     <div className="w-full bg-yellow-400 p-5">
@@ -41,9 +36,7 @@ const Header: React.FC = () => {
           <Link href="/Certificate" className="hover:text-blue-700">
             Certificate
           </Link>
-          <button onClick={openLoginModal} className="hover:text-blue-700" aria-label="Login">
-            Login / Signup
-          </button>
+         
         </div>
       </div>
 
