@@ -9,10 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
+
     "@monaco-editor/react": "^4.6.0",
-=======
->>>>>>> bcb821f903d8968b84199edd9329de6683429281
+
     "html2canvas": "^1.4.1",
     "next": "14.2.8",
     "react": "^18",
