@@ -1,7 +1,7 @@
 import Header from './Header/page';
 import HtmlCompiler from './HtmlCompiler/page';
 
-import JavaScriptCompiler from './JavaScriptCompiler/page';
+// import JavaScriptCompiler from './JavaScriptCompiler/page';
 import StudentDashboard from './StudentDashboard/page';
 
 const Page = () => {

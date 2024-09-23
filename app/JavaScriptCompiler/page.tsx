@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from 'react';
 import { Editor } from '@monaco-editor/react';
 
@@ -10,8 +10,10 @@ const JavaScriptCompiler: React.FC = () => {
     // Create a temporary console to capture logs
     const originalConsoleLog = console.log;
     const logs: string[] = [];
-    console.log = (...args: any[]) => {
-      logs.push(args.join(' '));
+    
+    // Define the type for the console.log arguments
+    console.log = (...args: unknown[]) => {
+      logs.push(args.map(arg => (typeof arg === 'object' ? JSON.stringify(arg) : arg)).join(' '));
     };
 
     try {
@@ -51,7 +53,7 @@ const JavaScriptCompiler: React.FC = () => {
 
       <button
         onClick={runCode}
-        className="mt-4 px-5  bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-200"
+        className="mt-4 px-5 bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition duration-200"
       >
         Run Code
       </button>
