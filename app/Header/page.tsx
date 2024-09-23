@@ -60,8 +60,11 @@ const Header: React.FC = () => {
           <Link href="/Certificate" className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="Certificate">
             Certificate
           </Link>
+          <Link href="/HtmlCompiler" className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="Certificate">
+          HtmlCompiler
+          </Link>
           <button onClick={openLoginModal} className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="Login">
-            Login / Signup
+            Login / Signupm
           </button>
         </div>
       )}
