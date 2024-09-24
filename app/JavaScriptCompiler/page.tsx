@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Editor } from '@monaco-editor/react';
 import Header from '../Header/page';
-
+import Footer from '../Footer/page';
 const JavaScriptCompiler: React.FC = () => {
   const [jsCode, setJsCode] = useState<string>('/* Write your JavaScript here */');
   const [output, setOutput] = useState<string>('');
@@ -63,6 +63,8 @@ const JavaScriptCompiler: React.FC = () => {
 
      
     </div>
+    <Footer/>
+
     </div>
 
   );

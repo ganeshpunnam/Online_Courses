@@ -25,9 +25,12 @@ const Header: React.FC = () => {
         </div>
 
         {/* Navigation Links for Desktop */}
-        <div className="hidden md:flex gap-4">
+        <div className="hidden md:flex gap-4 items-center">
           <Link href="/Course" className="hover:text-blue-700">
             Course
+          </Link>
+          <Link href="/HtmlCompiler" className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="HtmlCompiler">
+            HtmlCompiler
           </Link>
           <Link href="/Certificate" className="hover:text-blue-700">
             Certificate
@@ -38,11 +41,14 @@ const Header: React.FC = () => {
       {/* Dropdown Menu for Mobile */}
       {isOpen && (
         <div className="flex flex-col items-start bg-yellow-400 mt-4 md:hidden">
-          <Link href="/Counter" className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="Counter">
-            Counter
+          <Link href="/Course" className="hover:text-blue-700">
+            Course
           </Link>
           <Link href="/HtmlCompiler" className="py-2 hover:text-blue-700 w-full text-left pl-4" aria-label="HtmlCompiler">
             HtmlCompiler
+          </Link>
+          <Link href="/Certificate" className="hover:text-blue-700">
+            Certificate
           </Link>
         </div>
       )}

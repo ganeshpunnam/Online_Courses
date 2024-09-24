@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import JavaScript from '../JavaScript/page';
 import Link from 'next/link';
 import Header from '../Header/page';
+import Footer from '../Footer/page';
+import { CodeBracketIcon } from '@heroicons/react/24/solid';
+import Quiz from '../Quiz/page';
 
 const StudentDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState('courses');
@@ -12,20 +15,18 @@ const StudentDashboard: React.FC = () => {
     { id: 2, stage: 'Build a Portfolio', status: 'In Progress' },
   ];
 
-  const dummyQuizzes = [
-    { id: 1, title: 'JavaScript Basics', score: '80%' },
-    { id: 2, title: 'React Introduction', score: '90%' },
-  ];
-
   const renderContent = () => {
     switch (activeTab) {
       case 'courses':
         return (
-          <div>
-            <div className='flex justify-between items-center'>
-              <h2 className="text-xl">Courses</h2>
-              <Link className='text-red-500' href={"/JavaScriptCompiler"}>
-                Play Ground
+          <div className='h-[900px]'>
+            <div className='flex justify-between items-center '>
+              <h2 className="text-xl text-yellow-300 font-bold">Courses</h2>
+              <Link className='text-red-500 font-semibold' href={"/JavaScriptCompiler"}>
+                <div className='flex items-center gap-2'>
+                  <CodeBracketIcon className="h-7 w-7 text-red-700" />
+                  Play Ground
+                </div>
               </Link>
             </div>
             <JavaScript />
@@ -48,13 +49,7 @@ const StudentDashboard: React.FC = () => {
         return (
           <div>
             <h2 className="text-xl font-bold">Quizzes</h2>
-            <ul>
-              {dummyQuizzes.map(quiz => (
-                <li key={quiz.id} className="py-2">
-                  <span>{quiz.title} - Score: {quiz.score}</span>
-                </li>
-              ))}
-            </ul>
+            <Quiz />
           </div>
         );
       default:
@@ -63,13 +58,13 @@ const StudentDashboard: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen text-white">
       {/* Header at the top */}
       <Header />
 
-      <div className="flex flex-1">
+      <div className="flex flex-col md:flex-row flex-1">
         {/* Sidebar */}
-        <aside className="w-1/4 bg-gray-800 text-white p-5">
+        <aside className="w-full md:w-1/4 bg-gray-800 text-white p-5 md:p-5">
           <h2 className="text-2xl font-bold mb-5">Student Dashboard</h2>
           <ul>
             <li
@@ -94,10 +89,12 @@ const StudentDashboard: React.FC = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-5 bg-gray-100">
+        <main className="flex-1 p-5 bg-black">
           {renderContent()}
         </main>
       </div>
+
+      <Footer />
     </div>
   );
 };
