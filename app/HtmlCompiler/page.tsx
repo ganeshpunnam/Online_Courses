@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Editor } from '@monaco-editor/react'; // Correct import for Monaco Editor
 
 const HtmlCompiler: React.FC = () => {
@@ -41,6 +41,9 @@ const HtmlCompiler: React.FC = () => {
       documentInFrame.close();
     }
   };
+  useEffect(() => {
+    runCode();
+  }, [htmlCode, cssCode, jsCode]);
 
   return (
     <div className="max-w-6xl mx-auto p-6 bg-gray-50 rounded-lg shadow-lg">

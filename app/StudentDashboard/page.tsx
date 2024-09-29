@@ -5,15 +5,13 @@ import Link from 'next/link';
 import Header from '../Header/page';
 import Footer from '../Footer/page';
 import { CodeBracketIcon } from '@heroicons/react/24/solid';
-import Quiz from '../Quiz/page';
+import Quiz from '../Quiz/page'; 
+import Roadmap_JavaScrit from '../Roadmap_JavaScrit/page'
 
 const StudentDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState('courses');
 
-  const dummyRoadmap = [
-    { id: 1, stage: 'Learn HTML & CSS', status: 'Completed' },
-    { id: 2, stage: 'Build a Portfolio', status: 'In Progress' },
-  ];
+ 
 
   const renderContent = () => {
     switch (activeTab) {
@@ -37,11 +35,7 @@ const StudentDashboard: React.FC = () => {
           <div>
             <h2 className="text-xl font-bold">Roadmap</h2>
             <ul>
-              {dummyRoadmap.map(item => (
-                <li key={item.id} className="py-2">
-                  <span>{item.stage} - {item.status}</span>
-                </li>
-              ))}
+             <Roadmap_JavaScrit/>
             </ul>
           </div>
         );

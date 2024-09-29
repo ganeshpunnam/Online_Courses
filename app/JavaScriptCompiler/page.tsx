@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Editor } from '@monaco-editor/react';
 import Header from '../Header/page';
 import Footer from '../Footer/page';
@@ -28,6 +28,9 @@ const JavaScriptCompiler: React.FC = () => {
       console.log = originalConsoleLog;
     }
   };
+  useEffect(()=>{
+     runCode();
+  },[jsCode])
 
   return (
     <div>
